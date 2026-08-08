@@ -1,64 +1,63 @@
-/*
-  ECOS DE SAL — CONFIGURACIÓN
-  Aquí se cambian títulos, textos e IMPORTANTEMENTE los enlaces.
-  No necesitas tocar index.html, styles.css ni script.js.
+// ============================================================
+// ECOS DE SAL — ENLACES OFICIALES
+// Edita SOLO este archivo cuando quieras cambiar enlaces.
+// ============================================================
 
-  Pon cada URL real donde aparece "AÑADIR_URL".
-*/
+const LINKS = {
+  youtube: "https://www.youtube.com/@EcosdeSal-r6x",
 
-const CONFIG = {
-  socials: [
-    { name: 'YouTube', short: 'YT', url: 'https://www.youtube.com/@EcosdeSal-r6x' },
-    { name: 'Spotify', short: 'SP', url: 'AÑADIR_URL' },
-    { name: 'Apple Music', short: 'AM', url: 'AÑADIR_URL' },
-    { name: 'YouTube Music', short: 'YM', url: 'AÑADIR_URL' },
-    { name: 'Instagram', short: 'IG', url: 'https://www.instagram.com/ecosdesalmusic/' },
-    { name: 'Facebook', short: 'FB', url: 'AÑADIR_URL' }
-  ],
+  facebook: "https://www.facebook.com/profile.php?id=61592861408012",
 
-  flagship: {
-    title: 'Rosa Marchitada',
-    subtitle: 'Nuestro buque insignia.',
-    description: 'La canción que abrió una de las puertas más importantes del universo de Ecos de Sal. Una historia de amor, pérdida y memoria que sigue siendo parte esencial de nuestro camino.',
-    image: 'assets/rosa-marchitada.svg',
-    links: [
-      { label: '▶ Ver en YouTube', url: 'https://www.youtube.com/@EcosdeSal-r6x', primary: true },
-      { label: 'Spotify', url: 'AÑADIR_URL' },
-      { label: 'Apple Music', url: 'AÑADIR_URL' },
-      { label: 'YouTube Music', url: 'AÑADIR_URL' }
-    ]
+  youtubeMusic: "https://music.youtube.com/@ecosdesal-r6x",
+
+  spotify: "https://open.spotify.com/intl-es/artist/744WMGbPTgUcpUe9QLtO87",
+
+  appleMusic: "https://music.apple.com/es/artist/ecos-de-sal/6791435610",
+
+  instagram: "", // Se añadirá cuando esté creado.
+
+  featured: {
+    title: "Rosa Marchitada",
+    youtube: "https://youtu.be/3KrNG-zS9TY",
+    spotify: "https://open.spotify.com/intl-es/album/107APvEE5ayjaVlwOEYhWD",
+    apple: "https://music.apple.com/es/album/rosa-marchitada-single/6791497536"
   },
 
   latest: {
-    title: 'La última promesa',
-    description: 'Dos amantes separados por la muerte. Una promesa que desafía al tiempo, al cielo y a la propia eternidad.',
-    image: 'assets/ultimo-estreno.svg',
-    links: [
-      { label: '▶ Ver el vídeo', url: 'AÑADIR_URL', primary: true },
-      { label: 'Spotify', url: 'AÑADIR_URL' },
-      { label: 'Apple Music', url: 'AÑADIR_URL' },
-      { label: 'YouTube Music', url: 'AÑADIR_URL' }
-    ]
+    title: "La Última Promesa",
+    youtube: "https://youtu.be/lUWrywTCJ0A"
   },
 
   album: {
-    title: 'Venas de Obsidiana',
-    description: 'El gran universo narrativo de Ecos de Sal.',
-    text: 'Una ópera gótica sinfónica de tres actos sobre vampiros, amor eterno, obsesión, fe y redención.',
-    image: 'assets/album.svg',
-    links: [
-      { label: 'Spotify', url: 'AÑADIR_URL' },
-      { label: 'Apple Music', url: 'AÑADIR_URL' },
-      { label: 'YouTube Music', url: 'AÑADIR_URL' }
-    ]
+    title: "Volveremos a Casa",
+    spotify: "https://open.spotify.com/intl-es/album/2lK0VbqfPtNj6euvBJ2sI6",
+    apple: "https://music.apple.com/es/album/volveremos-a-casa/6794834098"
   },
 
-  venas: {
-    singles: [
-      { title: 'Tus ojos son la noche', url: 'AÑADIR_URL' },
-      { title: 'Próximo capítulo', url: 'AÑADIR_URL' },
-      { title: 'Próximo capítulo', url: 'AÑADIR_URL' }
-    ],
-    fullOperaUrl: 'AÑADIR_URL'
+  singles: [
+    {
+      title: "Rosa Marchitada",
+      image: "assets/rosa-marchitada.svg",
+      spotify: "https://open.spotify.com/intl-es/album/107APvEE5ayjaVlwOEYhWD",
+      apple: "https://music.apple.com/es/album/rosa-marchitada-single/6791497536"
+    },
+    {
+      title: "Novia de Mármol",
+      image: "assets/novia-de-marmol.svg",
+      spotify: "https://open.spotify.com/intl-es/album/2NQD7CBLGIZ4ZkY7MzV2tq",
+      apple: "https://music.apple.com/es/album/novia-de-m%C3%A1rmol-single/6793781452"
+    },
+    {
+      title: "Tus Ojos Son la Noche",
+      subtitle: "Venas de Obsidiana",
+      image: "assets/tus-ojos-son-la-noche.svg",
+      spotify: "https://open.spotify.com/intl-es/album/2vppowPxGHbaoTKzHSN0DB",
+      apple: "https://music.apple.com/es/album/tus-ojos-son-la-noche-single/6799329529"
+    }
+  ],
+
+  merch: {
+    available: false,
+    url: ""
   }
 };
