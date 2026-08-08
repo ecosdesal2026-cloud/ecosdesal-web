@@ -1,24 +1,18 @@
-# Ecos de Sal — Web oficial v2
+# Ecos de Sal — Web oficial v4
 
-Web estática preparada para Cloudflare Pages.
+Versión preparada para Cloudflare Pages.
 
-## Archivos
-- `index.html`
-- `styles.css`
-- `config.js`
-- `script.js`
-- `assets/`
-
-## Lo único que debes editar
-Abre `config.js` y sustituye cada `AÑADIR_URL` por el enlace real correspondiente.
-
-La web ya incluye:
+### Esta versión corrige
+- Fondo de encaje con mucha más presencia visual.
+- Portadas reales en lugar de SVG provisionales.
+- La Última Promesa como último estreno.
 - Rosa Marchitada como buque insignia.
-- Último estreno.
-- Venas de Obsidiana.
-- Streaming.
-- Redes sociales.
-- Merchandising próximamente.
-- Diseño responsive para móvil y ordenador.
+- Portada y contraportada de Volveremos a Casa.
+- Novia de Mármol.
+- Venas de Obsidiana / Tus Ojos Son la Noche.
+- Logo de Ecos de Sal incluido como recurso para futuras secciones.
+- Imágenes de las portadas mostradas completas, sin recortes agresivos.
 
-No necesita Node, npm ni build command.
+### Instalación
+Sube el contenido del ZIP al repositorio `ecosdesal-web` y haz commit directamente sobre `main`.
+Cloudflare Pages hará el deployment automáticamente.
