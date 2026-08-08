@@ -1,8 +1,4 @@
-// ============================================================
 // ECOS DE SAL — ENLACES OFICIALES
-// Edita SOLO este archivo cuando quieras cambiar enlaces.
-// ============================================================
-
 const LINKS = {
   youtube: "https://www.youtube.com/@EcosdeSal-r6x",
   facebook: "https://www.facebook.com/profile.php?id=61592861408012",
@@ -10,7 +6,6 @@ const LINKS = {
   spotify: "https://open.spotify.com/intl-es/artist/744WMGbPTgUcpUe9QLtO87",
   appleMusic: "https://music.apple.com/es/artist/ecos-de-sal/6791435610",
   instagram: "",
-
   featured: {
     title: "Rosa Marchitada",
     image: "assets/rosa-marchitada.png",
@@ -18,13 +13,11 @@ const LINKS = {
     spotify: "https://open.spotify.com/intl-es/album/107APvEE5ayjaVlwOEYhWD",
     apple: "https://music.apple.com/es/album/rosa-marchitada-single/6791497536"
   },
-
   latest: {
     title: "La Última Promesa",
     image: "assets/la-ultima-promesa.png",
     youtube: "https://youtu.be/lUWrywTCJ0A"
   },
-
   album: {
     title: "Volveremos a Casa",
     image: "assets/volveremos-a-casa.png",
@@ -32,7 +25,6 @@ const LINKS = {
     spotify: "https://open.spotify.com/intl-es/album/2lK0VbqfPtNj6euvBJ2sI6",
     apple: "https://music.apple.com/es/album/volveremos-a-casa/6794834098"
   },
-
   singles: [
     {
       title: "Rosa Marchitada",
@@ -54,6 +46,5 @@ const LINKS = {
       apple: "https://music.apple.com/es/album/tus-ojos-son-la-noche-single/6799329529"
     }
   ],
-
   merch: { available: false, url: "" }
 };

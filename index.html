@@ -1,150 +1,85 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080708">
-  <meta name="description" content="Ecos de Sal — Metal gótico, rock alternativo e historias que sobreviven a la muerte.">
-  <title>Ecos de Sal | Official Website</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080708">
+<meta name="description" content="Ecos de Sal — Metal gótico, rock alternativo e historias que sobreviven a la muerte.">
+<title>Ecos de Sal | Official Website</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="network-logos.css">
 </head>
 <body>
-  <div class="page-noise"></div>
-
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Ecos de Sal">ECOS DE SAL</a>
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="#destacado">Destacado</a>
-      <a href="#ultimo-estreno">Último estreno</a>
-      <a href="#lanzamiento">Lanzamiento</a>
-      <a href="#venas">Venas de Obsidiana</a>
-      <a href="#redes">Redes</a>
-      <a href="#merch">Merch</a>
-    </nav>
-  </header>
-
-  <main id="inicio">
-
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">OFFICIAL WEBSITE</p>
-        <h1 class="hero-logo">
-          <img src="assets/logo-ecos-de-sal.png" alt="Ecos de Sal">
-        </h1>
-        <p class="tagline">Metal gótico · Rock alternativo · Historias que sobreviven a la muerte.</p>
-
-        <div class="social-orbs" id="hero-socials"></div>
-
-        <a class="scroll-cue" href="#destacado">
-          <span>DESCUBRIR</span>
-          <b>↓</b>
-        </a>
-      </div>
-    </section>
-
-    <section class="section featured" id="destacado">
-      <div class="section-heading">
-        <p class="eyebrow">BUQUE INSIGNIA</p>
-        <h2>Rosa Marchitada</h2>
-        <p>La canción que representa el universo de Ecos de Sal.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="art-frame">
-          <img src="assets/rosa-marchitada.png" alt="Rosa Marchitada">
-        </div>
-        <div class="feature-copy">
-          <p class="kicker">ECOS DE SAL</p>
-          <h3>Rosa Marchitada</h3>
-          <p>Una historia de amor, pérdida y permanencia. La canción que se convirtió en una de las piezas centrales del proyecto.</p>
-          <div class="button-row" id="featured-links"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section latest" id="ultimo-estreno">
-      <div class="section-heading">
-        <p class="eyebrow">ÚLTIMO ESTRENO</p>
-        <h2>La Última Promesa</h2>
-        <p>El lanzamiento más reciente de Ecos de Sal.</p>
-      </div>
-
-      <div class="latest-card">
-        <div class="latest-art">
-          <img src="assets/la-ultima-promesa.png" alt="La Última Promesa">
-        </div>
-        <div class="latest-copy">
-          <span class="release-label">NUEVO ESTRENO</span>
-          <h3>La Última Promesa</h3>
-          <p>Cuando el amor se niega a morir, solo queda una última promesa.</p>
-          <a class="button primary" data-link="latest-youtube" target="_blank" rel="noopener">Ver en YouTube ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section album" id="lanzamiento">
-      <div class="section-heading">
-        <p class="eyebrow">LANZAMIENTO</p>
-        <h2>Volveremos a Casa</h2>
-        <p>El álbum de 10 canciones que reúne una parte esencial del universo de Ecos de Sal.</p>
-      </div>
-
-      <div class="album-grid">
-        <div class="album-cover">
-          <img src="assets/volveremos-a-casa.png" alt="Portada del álbum Volveremos a Casa">
-        </div>
-        <div class="album-info">
-          <p class="album-quote">«El destino escribe… pero no decide.»</p>
-          <p>El lanzamiento discográfico completo reúne diez canciones dentro del universo de Ecos de Sal.</p>
-          <div class="button-row">
-            <a class="button" data-link="album-spotify" target="_blank" rel="noopener">Spotify ↗</a>
-            <a class="button" data-link="album-apple" target="_blank" rel="noopener">Apple Music ↗</a>
-          </div>
-          <div class="album-back">
-            <img src="assets/volveremos-a-casa-contraportada.png" alt="Contraportada del álbum Volveremos a Casa">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section singles" id="venas">
-      <div class="section-heading">
-        <p class="eyebrow">UNIVERSO</p>
-        <h2>Venas de Obsidiana</h2>
-        <p>Una nueva historia dentro del universo oscuro de Ecos de Sal.</p>
-      </div>
-
-      <div class="release-grid" id="singles-grid"></div>
-    </section>
-
-    <section class="section networks" id="redes">
-      <div class="section-heading">
-        <p class="eyebrow">ENCUÉNTRANOS</p>
-        <h2>Redes & Streaming</h2>
-        <p>Escucha, descubre y sigue a Ecos de Sal.</p>
-      </div>
-      <div class="network-grid" id="network-grid"></div>
-    </section>
-
-    <section class="section merch" id="merch">
-      <div class="merch-box">
-        <p class="eyebrow">PRÓXIMAMENTE</p>
-        <h2>Merchandising</h2>
-        <p>La oscuridad también se lleva puesta.</p>
-        <span class="coming-soon">TIENDA EN PREPARACIÓN</span>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-brand">ECOS DE SAL</div>
-    <p>Metal gótico · Rock alternativo · Historias que sobreviven a la muerte.</p>
-    <p class="copyright">© 2026 Ecos de Sal. Todos los derechos reservados.</p>
-  </footer>
-
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+<div class="page-noise"></div>
+<header class="site-header">
+<a class="brand" href="#inicio" aria-label="Ecos de Sal">ECOS DE SAL</a>
+<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+<nav class="nav" aria-label="Navegación principal">
+<a href="#destacado">Destacado</a>
+<a href="#ultimo-estreno">Último estreno</a>
+<a href="#lanzamiento">Lanzamiento</a>
+<a href="#venas">Venas de Obsidiana</a>
+<a href="#redes">Redes</a>
+<a href="#merch">Merch</a>
+</nav>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="hero-inner">
+<p class="eyebrow">OFFICIAL WEBSITE</p>
+<h1 class="hero-logo"><img src="assets/logo-ecos-de-sal.png" alt="Ecos de Sal"></h1>
+<p class="tagline">Metal gótico · Rock alternativo · Historias que sobreviven a la muerte.</p>
+<div class="social-orbs" id="hero-socials"></div>
+<a class="scroll-cue" href="#destacado"><span>DESCUBRIR</span><b>↓</b></a>
+</div>
+</section>
+<section class="section featured" id="destacado">
+<div class="section-heading">
+<p class="eyebrow">BUQUE INSIGNIA</p><h2>Rosa Marchitada</h2>
+<p>La canción que representa el universo de Ecos de Sal.</p>
+</div>
+<div class="feature-card">
+<div class="art-frame"><img src="assets/rosa-marchitada.png" alt="Rosa Marchitada"></div>
+<div class="feature-copy">
+<p class="kicker">ECOS DE SAL</p><h3>Rosa Marchitada</h3>
+<p>Una historia de amor, pérdida y permanencia. La canción que se convirtió en una de las piezas centrales del proyecto.</p>
+<div class="button-row" id="featured-links"></div>
+</div>
+</div>
+</section>
+<section class="section latest" id="ultimo-estreno">
+<div class="section-heading"><p class="eyebrow">ÚLTIMO ESTRENO</p><h2>La Última Promesa</h2><p>El lanzamiento más reciente de Ecos de Sal.</p></div>
+<div class="latest-card">
+<div class="latest-art"><img src="assets/la-ultima-promesa.png" alt="La Última Promesa"></div>
+<div class="latest-copy"><span class="release-label">NUEVO ESTRENO</span><h3>La Última Promesa</h3><p>Cuando el amor se niega a morir, solo queda una última promesa.</p><a class="button primary" data-link="latest-youtube" target="_blank" rel="noopener">Ver en YouTube ↗</a></div>
+</div>
+</section>
+<section class="section album" id="lanzamiento">
+<div class="section-heading"><p class="eyebrow">LANZAMIENTO</p><h2>Volveremos a Casa</h2><p>El álbum de 10 canciones que reúne una parte esencial del universo de Ecos de Sal.</p></div>
+<div class="album-grid">
+<div class="album-cover"><img src="assets/volveremos-a-casa.png" alt="Portada del álbum Volveremos a Casa"></div>
+<div class="album-info">
+<p class="album-quote">«El destino escribe… pero no decide.»</p>
+<p>El lanzamiento discográfico completo reúne diez canciones dentro del universo de Ecos de Sal.</p>
+<div class="button-row"><a class="button" data-link="album-spotify" target="_blank" rel="noopener">Spotify ↗</a><a class="button" data-link="album-apple" target="_blank" rel="noopener">Apple Music ↗</a></div>
+<div class="album-back"><img src="assets/volveremos-a-casa-contraportada.png" alt="Contraportada del álbum Volveremos a Casa"></div>
+</div>
+</div>
+</section>
+<section class="section singles" id="venas">
+<div class="section-heading"><p class="eyebrow">UNIVERSO</p><h2>Venas de Obsidiana</h2><p>Una nueva historia dentro del universo oscuro de Ecos de Sal.</p></div>
+<div class="release-grid" id="singles-grid"></div>
+</section>
+<section class="section networks" id="redes">
+<div class="section-heading"><p class="eyebrow">ENCUÉNTRANOS</p><h2>Redes & Streaming</h2><p>Escucha, descubre y sigue a Ecos de Sal.</p></div>
+<div class="network-grid" id="network-grid"></div>
+</section>
+<section class="section merch" id="merch">
+<div class="merch-box"><p class="eyebrow">PRÓXIMAMENTE</p><h2>Merchandising</h2><p>La oscuridad también se lleva puesta.</p><span class="coming-soon">TIENDA EN PREPARACIÓN</span></div>
+</section>
+</main>
+<footer><div class="footer-brand">ECOS DE SAL</div><p>Metal gótico · Rock alternativo · Historias que sobreviven a la muerte.</p><p class="copyright">© 2026 Ecos de Sal. Todos los derechos reservados.</p></footer>
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

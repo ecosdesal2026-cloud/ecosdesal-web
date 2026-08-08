@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const safeLink = (url, label, className = "button") =>
     url ? `<a class="${className}" href="${url}" target="_blank" rel="noopener">${label} ↗</a>` : "";
 
-  // Menú móvil
   const toggle = $(".menu-toggle");
   const nav = $(".nav");
   toggle?.addEventListener("click", () => {
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("click", () => nav.classList.remove("open"))
   );
 
-  // Redes principales
   const socials = [
     ["YT", LINKS.youtube],
     ["SP", LINKS.spotify],
@@ -41,12 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   $('[data-link="album-spotify"]').href = LINKS.album.spotify;
   $('[data-link="album-apple"]').href = LINKS.album.apple;
 
-  // Sencillos
   $("#singles-grid").innerHTML = LINKS.singles.map(item => `
     <article class="release-card">
-      <div class="release-art">
-        <img src="${item.image}" alt="${item.title}">
-      </div>
+      <div class="release-art"><img src="${item.image}" alt="${item.title}"></div>
       <div class="release-body">
         <h3>${item.title}</h3>
         ${item.subtitle ? `<small>${item.subtitle}</small>` : ""}
@@ -58,21 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
     </article>
   `).join("");
 
-  // Redes y plataformas
   const networks = [
-    ["YouTube", "Canal oficial", LINKS.youtube],
-    ["Spotify", "Artista", LINKS.spotify],
-    ["Apple Music", "Artista", LINKS.appleMusic],
-    ["YouTube Music", "Artista", LINKS.youtubeMusic],
-    ["Facebook", "Página oficial", LINKS.facebook],
-    ["Instagram", "Próximamente", LINKS.instagram]
+    ["YouTube", "Canal oficial", LINKS.youtube, "assets/youtube.png", "youtube"],
+    ["Spotify", "Artista", LINKS.spotify, "assets/spotify.png", "spotify"],
+    ["Apple Music", "Artista", LINKS.appleMusic, "assets/apple-music.png", "apple"],
+    ["YouTube Music", "Artista", LINKS.youtubeMusic, "assets/youtube-music.png", "youtube-music"],
+    ["Facebook", "Página oficial", LINKS.facebook, "assets/facebook.png", "facebook"],
+    ["Instagram", "Próximamente", LINKS.instagram, "assets/instagram.png", "instagram"]
   ];
 
-  $("#network-grid").innerHTML = networks.map(([name, subtitle, url]) => `
-    <a class="network-card" href="${url || "#"}"
+  $("#network-grid").innerHTML = networks.map(([name, subtitle, url, icon, key]) => `
+    <a class="network-card network-${key}" href="${url || "#"}"
        ${url ? 'target="_blank" rel="noopener"' : 'aria-disabled="true" onclick="return false;"'}>
+      <span class="network-icon-wrap">
+        <img class="network-icon" src="${icon}" alt="" aria-hidden="true">
+      </span>
       <strong>${name}</strong>
-      <span>${subtitle}</span>
+      <span class="network-subtitle">${subtitle}</span>
     </a>
   `).join("");
 });
