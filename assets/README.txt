@@ -1,1 +1,1 @@
-Coloca aquí las imágenes: logo.png, hero.jpg, rosa-marchitada.jpg, ultimo-estreno.jpg, album.jpg y venas.jpg
+Estas imágenes SVG son portadas provisionales elegantes para evitar paneles vacíos. Puedes sustituirlas por JPG/WEBP reales y cambiar las rutas en config.js.

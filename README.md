@@ -1,23 +1,24 @@
-# Ecos de Sal — web oficial
+# Ecos de Sal — Web oficial v2
 
-Landing estática para Cloudflare Pages. No necesita Node ni compilación.
+Web estática preparada para Cloudflare Pages.
 
-## Para personalizarla
-Edita `config.js`. Ahí están los enlaces y contenidos de:
-- Rosa Marchitada (buque insignia)
-- Último estreno
-- Último lanzamiento/álbum
-- Venas de Obsidiana
-- YouTube, Spotify, Apple Music, YouTube Music, Instagram y Facebook
+## Archivos
+- `index.html`
+- `styles.css`
+- `config.js`
+- `script.js`
+- `assets/`
 
-## Imágenes
-Coloca en `assets/`:
-- logo.png
-- hero.jpg
-- rosa-marchitada.jpg
-- ultimo-estreno.jpg
-- album.jpg
-- venas.jpg
+## Lo único que debes editar
+Abre `config.js` y sustituye cada `AÑADIR_URL` por el enlace real correspondiente.
 
-## Publicar
-Sube `index.html`, `styles.css`, `config.js`, `script.js` y la carpeta `assets` a Cloudflare Pages.
+La web ya incluye:
+- Rosa Marchitada como buque insignia.
+- Último estreno.
+- Venas de Obsidiana.
+- Streaming.
+- Redes sociales.
+- Merchandising próximamente.
+- Diseño responsive para móvil y ordenador.
+
+No necesita Node, npm ni build command.
