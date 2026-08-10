@@ -20,33 +20,41 @@
   const latest = document.querySelector('#estreno');
   if (latest) {
     const title = 'I Was Painted Shut';
-    const description = 'Una historia de encierro, silencio y liberación. Una mujer que dejó de pedir permiso para abrir la ventana.';
+    const description = 'Construida como una balada emocional de metal, la canción cuenta la historia de alguien que poco a poco se da cuenta de que ha quedado atrapado dentro de la vida que él mismo ha construido. No trata sobre ser rescatado. Trata sobre encontrar la fuerza para abrir la ventana con tus propias manos… y volver a respirar.';
     const image = latest.querySelector('.art-wrap img');
     const heading = latest.querySelector('.section-heading h2');
+    const sectionDescription = latest.querySelector('.section-heading > p:last-child');
     const cardTitle = latest.querySelector('.copy h3');
     const cardText = latest.querySelector('.copy p');
     const kicker = latest.querySelector('.kicker');
     const buttonLink = latest.querySelector('.button.primary');
 
     if (heading) heading.textContent = title;
+    if (sectionDescription) sectionDescription.textContent = 'Una historia sobre el encierro que uno mismo termina construyendo… y la fuerza necesaria para volver a respirar.';
     if (cardTitle) cardTitle.textContent = title;
     if (cardText) cardText.textContent = description;
     if (kicker) kicker.textContent = 'NUEVO ESTRENO · GOTHIC METAL';
 
-    const loadCover = fetch('assets/i-was-painted-shut.b64')
-      .then(response => response.text())
+    // La portada está guardada como Base64 en el repositorio. Usamos raw.githubusercontent.com
+    // para evitar que GitHub Pages interprete .b64 como un recurso no servido correctamente.
+    fetch('https://raw.githubusercontent.com/ecosdesal2026-cloud/ecosdesal-web/main/assets/i-was-painted-shut.b64', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error('No se pudo cargar la portada');
+        return response.text();
+      })
       .then(base64 => {
+        const src = `data:image/jpeg;base64,${base64.trim()}`;
         if (image) {
-          image.src = `data:image/jpeg;base64,${base64.trim()}`;
+          image.src = src;
           image.alt = title;
         }
         const releaseImage = document.querySelector('[data-latest-release] img');
         if (releaseImage) {
-          releaseImage.src = `data:image/jpeg;base64,${base64.trim()}`;
+          releaseImage.src = src;
           releaseImage.alt = title;
         }
       })
-      .catch(() => {});
+      .catch(error => console.warn('Portada del estreno:', error));
 
     if (buttonLink) {
       buttonLink.href = 'https://www.youtube.com/@EcosdeSal-r6x';
@@ -70,21 +78,23 @@
           </div>
         </div>`;
       grid.prepend(article);
-      loadCover;
     }
   }
 
   // CONTADOR DE VISITAS — contador acumulativo de la web.
-  const footer = document.querySelector('footer');
-  if (footer && !document.querySelector('[data-ecos-visits]')) {
+  const counterHost = document.querySelector('.hero-socials');
+  if (counterHost && !document.querySelector('[data-ecos-visits]')) {
     const visits = document.createElement('div');
     visits.setAttribute('data-ecos-visits', 'true');
-    visits.innerHTML = '<span style="opacity:.75">◉</span> <strong>VISITAS</strong> <span data-count>…</span>';
-    visits.style.cssText = 'margin:24px auto 8px;padding:10px 18px;border:1px solid rgba(255,255,255,.12);display:inline-flex;gap:9px;align-items:center;color:#aaa2a0;font:9px/1 Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.18);';
-    footer.appendChild(visits);
+    visits.innerHTML = '<span style="opacity:.75">◉</span> <strong>VISITAS A LA WEB</strong> <span data-count>…</span>';
+    visits.style.cssText = 'margin:22px auto 0;padding:9px 16px;border:1px solid rgba(255,255,255,.14);display:inline-flex;gap:9px;align-items:center;color:#aaa2a0;font:9px/1 Inter,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.25);';
+    counterHost.insertAdjacentElement('afterend', visits);
 
-    fetch('https://counterapi.com/api/ecosdesal-web/view/homepage')
-      .then(response => response.json())
+    fetch('https://counterapi.com/api/ecosdesal-web/view/homepage', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error('CounterAPI error');
+        return response.json();
+      })
       .then(data => {
         const count = visits.querySelector('[data-count]');
         if (count && typeof data.value !== 'undefined') {
