@@ -35,26 +35,13 @@
     if (cardText) cardText.textContent = description;
     if (kicker) kicker.textContent = 'NUEVO ESTRENO · GOTHIC METAL';
 
-    // La portada está guardada como Base64 en el repositorio. Usamos raw.githubusercontent.com
-    // para evitar que GitHub Pages interprete .b64 como un recurso no servido correctamente.
-    fetch('https://raw.githubusercontent.com/ecosdesal2026-cloud/ecosdesal-web/main/assets/i-was-painted-shut.b64', { cache: 'no-store' })
-      .then(response => {
-        if (!response.ok) throw new Error('No se pudo cargar la portada');
-        return response.text();
-      })
-      .then(base64 => {
-        const src = `data:image/jpeg;base64,${base64.trim()}`;
-        if (image) {
-          image.src = src;
-          image.alt = title;
-        }
-        const releaseImage = document.querySelector('[data-latest-release] img');
-        if (releaseImage) {
-          releaseImage.src = src;
-          releaseImage.alt = title;
-        }
-      })
-      .catch(error => console.warn('Portada del estreno:', error));
+    // Portada JPG real: no depende del estreno ni de Base64/JavaScript para mostrarse.
+    const coverSrc = 'assets/i-was-painted-shut.jpg';
+    if (image) {
+      image.src = coverSrc;
+      image.alt = title;
+      image.removeAttribute('srcset');
+    }
 
     if (buttonLink) {
       buttonLink.href = 'https://www.youtube.com/@EcosdeSal-r6x';
@@ -69,7 +56,7 @@
       article.className = 'release-card';
       article.setAttribute('data-latest-release', 'true');
       article.innerHTML = `
-        <img src="assets/logo-ecos-de-sal.png" alt="${title}" loading="lazy">
+        <img src="${coverSrc}" alt="${title}" loading="lazy">
         <div>
           <span class="kicker">NUEVO SINGLE</span>
           <h3>${title}</h3>
