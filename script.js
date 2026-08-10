@@ -35,12 +35,17 @@
     if (cardText) cardText.textContent = description;
     if (kicker) kicker.textContent = 'NUEVO ESTRENO · GOTHIC METAL';
 
-    // Portada JPG real: no depende del estreno ni de Base64/JavaScript para mostrarse.
-    const coverSrc = 'assets/i-was-painted-shut.jpg';
+    // La portada es un JPG real servido directamente por GitHub Pages.
+    // No se usa Base64 ni data URI.
+    const coverUrl = 'assets/i-was-painted-shut.jpg?v=2';
     if (image) {
-      image.src = coverSrc;
+      image.src = coverUrl;
       image.alt = title;
-      image.removeAttribute('srcset');
+    }
+    const releaseImage = document.querySelector('[data-latest-release] img');
+    if (releaseImage) {
+      releaseImage.src = coverUrl;
+      releaseImage.alt = title;
     }
 
     if (buttonLink) {
@@ -56,7 +61,7 @@
       article.className = 'release-card';
       article.setAttribute('data-latest-release', 'true');
       article.innerHTML = `
-        <img src="${coverSrc}" alt="${title}" loading="lazy">
+        <img src="${coverUrl}" alt="${title}" loading="lazy">
         <div>
           <span class="kicker">NUEVO SINGLE</span>
           <h3>${title}</h3>
