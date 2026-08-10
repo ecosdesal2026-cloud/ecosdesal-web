@@ -32,10 +32,22 @@
     if (cardTitle) cardTitle.textContent = title;
     if (cardText) cardText.textContent = description;
     if (kicker) kicker.textContent = 'NUEVO ESTRENO · GOTHIC METAL';
-    if (image) {
-      image.src = 'assets/i-was-painted-shut.jpg';
-      image.alt = title;
-    }
+
+    const loadCover = fetch('assets/i-was-painted-shut.b64')
+      .then(response => response.text())
+      .then(base64 => {
+        if (image) {
+          image.src = `data:image/jpeg;base64,${base64.trim()}`;
+          image.alt = title;
+        }
+        const releaseImage = document.querySelector('[data-latest-release] img');
+        if (releaseImage) {
+          releaseImage.src = `data:image/jpeg;base64,${base64.trim()}`;
+          releaseImage.alt = title;
+        }
+      })
+      .catch(() => {});
+
     if (buttonLink) {
       buttonLink.href = 'https://www.youtube.com/@EcosdeSal-r6x';
       buttonLink.textContent = 'Ver en YouTube ↗';
@@ -49,7 +61,7 @@
       article.className = 'release-card';
       article.setAttribute('data-latest-release', 'true');
       article.innerHTML = `
-        <img src="assets/i-was-painted-shut.jpg" alt="${title}" loading="lazy">
+        <img src="assets/logo-ecos-de-sal.png" alt="${title}" loading="lazy">
         <div>
           <span class="kicker">NUEVO SINGLE</span>
           <h3>${title}</h3>
@@ -58,10 +70,11 @@
           </div>
         </div>`;
       grid.prepend(article);
+      loadCover;
     }
   }
 
-  // CONTADOR DE VISITAS — CounterAPI, sin registro ni claves.
+  // CONTADOR DE VISITAS — contador acumulativo de la web.
   const footer = document.querySelector('footer');
   if (footer && !document.querySelector('[data-ecos-visits]')) {
     const visits = document.createElement('div');
