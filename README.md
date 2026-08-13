@@ -1,32 +1,18 @@
-# ECOS DE SAL — WEB OFICIAL v7.0
+# Ecos de Sal — Web oficial v4
 
-Paquete completo para subir el sitio desde cero a un repositorio estático / Cloudflare Pages.
+Versión preparada para Cloudflare Pages.
 
-## Estructura
+### Esta versión corrige
+- Fondo de encaje con mucha más presencia visual.
+- Portadas reales en lugar de SVG provisionales.
+- La Última Promesa como último estreno.
+- Rosa Marchitada como buque insignia.
+- Portada y contraportada de Volveremos a Casa.
+- Novia de Mármol.
+- Venas de Obsidiana / Tus Ojos Son la Noche.
+- Logo de Ecos de Sal incluido como recurso para futuras secciones.
+- Imágenes de las portadas mostradas completas, sin recortes agresivos.
 
-- `index.html` — web completa y todos los enlaces actuales.
-- `styles.css` — estética, responsive y fondo de encaje.
-- `script.js` — únicamente menú móvil.
-- `config.js` — identificador de versión.
-- `assets/` — todas las imágenes necesarias, incluyendo logo, fondo, portadas y logos de plataformas.
-
-## Subida a GitHub
-
-Sube **todo el contenido de esta carpeta** a la raíz del repositorio.
-
-Debe quedar así:
-
-```
-/index.html
-/styles.css
-/script.js
-/config.js
-/README.md
-/assets/...
-```
-
-No hay que crear carpetas adicionales ni modificar rutas.
-
-## Importante
-
-Instagram aparece como "Próximamente" porque la cuenta todavía no está creada. Cuando exista, solo habrá que cambiar su enlace en `index.html`.
+### Instalación
+Sube el contenido del ZIP al repositorio `ecosdesal-web` y haz commit directamente sobre `main`.
+Cloudflare Pages hará el deployment automáticamente.
